@@ -1,4 +1,5 @@
 require 'pry'
+require_relative '../model/person'
 
 arr = [1, 2, 3]
 some_bool = true
@@ -54,3 +55,27 @@ end
 [5, 8, 10, 20].each do |num|
   puts "factorial of #{num}: #{factorial(num)}"
 end
+
+arr = [1 ,2, 3]
+for i in arr do 
+  b = 5
+end
+puts "b is accessable here, loop does not create an inner scope in Ruby. b = #{b}"
+
+# puts "What's your name?"
+# name = gets
+# puts "Hi, #{name.strip}!"
+
+a = 3
+a = 5
+puts "It's ok to overwrite variables: #{a}"
+A = 3
+A = 5
+puts "Constants is mutable but that's not a good idea. You got a warnning for that: #{A}"
+$a = 6
+puts "Variables starts with a dollar sign is a global variable app-wise: #{$a}"
+
+alice = Person.new
+puts "Here we got a person instance: #{alice}"
+bob = Person.new
+puts "Total people in person class: #{Person.total_people}"
